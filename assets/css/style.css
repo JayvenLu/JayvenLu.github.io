@@ -33,8 +33,8 @@
   --line: #d6dee5;
   --line-dark: #b9c6d0;
   --sans: "IBM Plex Sans", "Segoe UI", sans-serif;
-  --sidebar-width: 340px;
-  --content-width: 900px;
+  --sidebar-width: 360px;
+  --content-width: 1320px;
 }
 
 * {
@@ -42,6 +42,7 @@
 }
 
 html {
+  font-size: 18px;
   scroll-behavior: smooth;
 }
 
@@ -50,7 +51,7 @@ body {
   color: var(--text);
   background: var(--page);
   font-family: var(--sans);
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: 300;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
@@ -125,11 +126,11 @@ h3 {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  padding: 3rem 2.25rem 2rem;
+  padding: 2.75rem 2.25rem 2rem;
 }
 
 .profile-photo {
-  width: 176px;
+  width: 190px;
   aspect-ratio: 1;
   margin: 0 auto 2rem;
   object-fit: cover;
@@ -225,7 +226,7 @@ h3 {
   width: calc(100% - var(--sidebar-width));
   min-height: 100vh;
   margin-left: var(--sidebar-width);
-  padding: 2rem clamp(2rem, 5vw, 5rem);
+  padding: 2rem clamp(2rem, 3vw, 3.5rem);
   background: var(--surface);
 }
 
@@ -239,7 +240,7 @@ h3 {
 .tab-nav {
   display: inline-flex;
   width: auto;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.75rem;
   padding: 0.3rem;
   background: var(--page);
   border: 1px solid var(--line);
@@ -289,7 +290,7 @@ h3 {
 }
 
 .prose {
-  max-width: 48rem;
+  max-width: 58rem;
 }
 
 .prose p:last-child {
@@ -539,7 +540,7 @@ h3 {
 
 @media (min-width: 1500px) {
   :root {
-    --sidebar-width: 380px;
+    --sidebar-width: 420px;
   }
 
   .profile-inner {
@@ -548,6 +549,14 @@ h3 {
 }
 
 @media (max-width: 900px) {
+  html {
+    font-size: 17px;
+  }
+
+  body {
+    font-size: 1.05rem;
+  }
+
   .site-layout {
     display: block;
   }
@@ -632,8 +641,12 @@ h3 {
 }
 
 @media (max-width: 620px) {
-  body {
+  html {
     font-size: 16px;
+  }
+
+  body {
+    font-size: 1.05rem;
   }
 
   .profile-inner {
