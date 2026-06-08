@@ -1,20 +1,74 @@
-const navToggle = document.querySelector(".nav-toggle");
-const siteNav = document.querySelector(".site-nav");
+const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+const defaultTab = "about";
 
-if (navToggle && siteNav) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", String(!isOpen));
-    siteNav.classList.toggle("is-open", !isOpen);
-  });
-
-  siteNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navToggle.setAttribute("aria-expanded", "false");
-      siteNav.classList.remove("is-open");
-    });
-  });
+function knownTab(tabName) {
+  return tabs.some((tab) => tab.dataset.tab === tabName);
 }
+
+function tabFromHash() {
+  const tabName = window.location.hash.slice(1);
+  return knownTab(tabName) ? tabName : defaultTab;
+}
+
+function activateTab(tabName, { updateHistory = false, focus = false } = {}) {
+  const nextTab = knownTab(tabName) ? tabName : defaultTab;
+
+  tabs.forEach((tab) => {
+    const selected = tab.dataset.tab === nextTab;
+    tab.setAttribute("aria-selected", String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+    if (selected && focus) {
+      tab.focus();
+    }
+  });
+
+  panels.forEach((panel) => {
+    panel.hidden = panel.id !== nextTab;
+  });
+
+  if (updateHistory) {
+    const nextHash = `#${nextTab}`;
+    if (window.location.hash !== nextHash) {
+      window.history.pushState({ tab: nextTab }, "", nextHash);
+    }
+  }
+
+  document.title = `${nextTab[0].toUpperCase()}${nextTab.slice(1)} | Xiaofan Lu`;
+}
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    activateTab(tab.dataset.tab, { updateHistory: true });
+  });
+
+  tab.addEventListener("keydown", (event) => {
+    let nextIndex = null;
+
+    if (event.key === "ArrowRight") {
+      nextIndex = (index + 1) % tabs.length;
+    } else if (event.key === "ArrowLeft") {
+      nextIndex = (index - 1 + tabs.length) % tabs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = tabs.length - 1;
+    }
+
+    if (nextIndex !== null) {
+      event.preventDefault();
+      activateTab(tabs[nextIndex].dataset.tab, { updateHistory: true, focus: true });
+    }
+  });
+});
+
+window.addEventListener("popstate", () => {
+  activateTab(tabFromHash());
+});
+
+window.addEventListener("hashchange", () => {
+  activateTab(tabFromHash());
+});
 
 const copyButton = document.querySelector("#copy-email");
 const emailAddress = document.querySelector("#email-address");
@@ -22,8 +76,10 @@ const copyStatus = document.querySelector("#copy-status");
 
 if (copyButton && emailAddress && copyStatus) {
   copyButton.addEventListener("click", async () => {
+    const email = emailAddress.textContent.trim();
+
     try {
-      await navigator.clipboard.writeText(emailAddress.textContent.trim());
+      await navigator.clipboard.writeText(email);
       copyButton.textContent = "Copied";
       copyStatus.textContent = "Email address copied to clipboard.";
     } catch {
@@ -39,7 +95,7 @@ if (copyButton && emailAddress && copyStatus) {
     window.setTimeout(() => {
       copyButton.textContent = "Copy";
       copyStatus.textContent = "";
-    }, 2200);
+    }, 2000);
   });
 }
 
@@ -48,23 +104,4 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const revealItems = document.querySelectorAll("[data-reveal]");
-
-if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
-} else {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
-  );
-
-  revealItems.forEach((item) => observer.observe(item));
-}
+activateTab(tabFromHash());

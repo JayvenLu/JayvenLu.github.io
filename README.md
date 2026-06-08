@@ -1,6 +1,6 @@
 # Xiaofan Lu Academic Website
 
-Source for [jayvenlu.github.io](https://jayvenlu.github.io/), a static academic homepage focused on vision-based tactile sensing, robotic perception, and edge AI.
+Source for [jayvenlu.github.io](https://jayvenlu.github.io/), a static academic homepage covering vision-based tactile sensing, robotic perception, and edge AI.
 
 ## Local Preview
 
@@ -11,23 +11,30 @@ python -m http.server 8200
 
 Open `http://127.0.0.1:8200/`.
 
-## Structure
+## Information Architecture
 
-- `index.html`: semantic page content
-- `assets/css/style.css`: responsive visual system
-- `assets/js/main.js`: navigation, email copy, and restrained reveal effects
-- `assets/images/`: portrait and publication imagery
-- `assets/fonts/`: locally hosted Cormorant Garamond and IBM Plex fonts
+- `About`: biography, education, research interests, technical practice, and brief news
+- `Publications`: reusable entries for peer-reviewed papers
+- `Projects`: public summaries of selected research and engineering work
+
+The active section is encoded in the URL hash, for example `#publications`.
+
+## Maintenance
+
+- Add a paper by duplicating one `.publication-item` block in `index.html`.
+- Add a project by duplicating one `.project-item` block.
+- Add a public update to the `.news-list`.
+- Keep images in `assets/images/` and specify their intrinsic `width` and `height`.
 
 ## Asset Sources
 
 - Portrait: personal application-material archive
-- SMF-PSNN image: public SMF-PSNN project page assets
-- GelSplitter3D image: public GelSplitter3D project page assets
-- Fonts: Cormorant Garamond and IBM Plex, distributed under the SIL Open Font License
+- SMF-PSNN image: public SMF-PSNN project-page assets
+- GelSplitter3D image: public GelSplitter3D project-page assets
+- IBM Plex: distributed under the SIL Open Font License
 
 Publication images remain subject to their respective paper and publisher rights. They may not be reused without permission.
 
 ## Public Boundaries
 
-This website includes only published papers and selected high-level research results. It intentionally excludes unpublished paper titles and status, private source code, datasets, author manuscripts, private contact details, and academic records.
+This website includes published papers and high-level public project summaries. It intentionally excludes unpublished paper titles and status, private source code, datasets, author manuscripts, company identities from confidential collaborations, private contact details, and academic records.
