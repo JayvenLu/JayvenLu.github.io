@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Xiaofan Lu develops vision-based tactile sensing systems for robotic perception, from sensor fabrication to geometry, force estimation, and edge deployment.">
+  <meta name="theme-color" content="#f4f6f5">
+  <link rel="canonical" href="https://jayvenlu.github.io/">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Xiaofan Lu | Vision-Tactile Sensing">
+  <meta property="og:description" content="Research in vision-based tactile sensing, robotic perception, and edge AI.">
+  <meta property="og:url" content="https://jayvenlu.github.io/">
+  <meta property="og:image" content="https://jayvenlu.github.io/assets/images/og-cover.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Xiaofan Lu | Vision-Tactile Sensing</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="#top" aria-label="Xiaofan Lu, home">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>Xiaofan Lu</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span>Menu</span>
+        <span class="nav-toggle-lines" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#background">Background</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero section-shell">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">Vision-Tactile Sensing · Robotic Perception · Edge AI</p>
+        <h1>Building tactile sensing systems from <em>compliant surfaces</em> to real-time perception.</h1>
+        <p class="hero-lede">
+          I am Xiaofan Lu, an M.Eng. student in Mechanical Engineering at Huazhong University of Science and Technology.
+          My research connects tactile sensor design, geometric reconstruction, force perception, and hardware acceleration.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#research">View research</a>
+          <a class="button button-text" href="https://github.com/JayvenLu" target="_blank" rel="noreferrer">GitHub profile <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <figure class="portrait-figure" data-reveal>
+        <div class="portrait-frame">
+          <img src="assets/images/portrait.webp" width="720" height="900" alt="Formal portrait of Xiaofan Lu">
+        </div>
+        <figcaption>
+          <span>01 / Profile</span>
+          <span>HUST · Wuhan, China</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="about" class="about section-shell section-rule">
+      <div class="section-index" aria-hidden="true">01</div>
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">About</p>
+        <h2>A full research pipeline, built as one system.</h2>
+      </div>
+      <div class="about-body" data-reveal>
+        <p class="lead">
+          I work across the full development cycle of vision-based tactile sensors: compliant structure design and fabrication,
+          imaging hardware, geometric and force calibration, 3D reconstruction, three-axis force estimation, and FPGA acceleration.
+        </p>
+        <p>
+          I am particularly interested in high-fidelity, high-speed tactile sensing for contact-rich robotic manipulation,
+          where sensing mechanics, computational models, and deployment hardware must be designed together.
+        </p>
+      </div>
+      <div class="fact-strip" data-reveal aria-label="Research summary">
+        <div><strong>2</strong><span>Publications</span></div>
+        <div><strong>3</strong><span>Published patent applications</span></div>
+        <div><strong>2024–2027</strong><span>HUST M.Eng.</span></div>
+      </div>
+    </section>
+
+    <section id="research" class="research section-shell section-rule">
+      <div class="section-index" aria-hidden="true">02</div>
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Research</p>
+        <h2>From the physical sensor to deployment at the edge.</h2>
+      </div>
+
+      <ol class="research-pipeline" data-reveal aria-label="Research pipeline">
+        <li>
+          <span class="pipeline-number">01</span>
+          <strong>Sensor</strong>
+          <small>Structure, optics, fabrication</small>
+        </li>
+        <li>
+          <span class="pipeline-number">02</span>
+          <strong>Calibration</strong>
+          <small>Geometry and force</small>
+        </li>
+        <li>
+          <span class="pipeline-number">03</span>
+          <strong>Geometry</strong>
+          <small>Normals and 3D shape</small>
+        </li>
+        <li>
+          <span class="pipeline-number">04</span>
+          <strong>Force</strong>
+          <small>Three-axis estimation</small>
+        </li>
+        <li>
+          <span class="pipeline-number">05</span>
+          <strong>Edge Deployment</strong>
+          <small>High-rate computation</small>
+        </li>
+      </ol>
+
+      <div class="research-feature">
+        <div class="research-statement" data-reveal>
+          <p class="eyebrow">Current Direction</p>
+          <h3>RGB-NIR geometry, force perception, and high-speed tactile computation.</h3>
+          <p>
+            My current work investigates curved vision-tactile sensing with complementary visible and near-infrared observations,
+            boundary-aware depth reconstruction, three-axis force perception, and efficient image-to-perception pipelines.
+          </p>
+          <p class="evidence-note">Performance figures below are results reported in the associated research paper.</p>
+        </div>
+        <div class="metrics-grid" data-reveal>
+          <article>
+            <span>Depth MAE</span>
+            <strong>0.0415 <small>mm</small></strong>
+            <p>Curved-surface 3D reconstruction</p>
+          </article>
+          <article>
+            <span>Force NMAE</span>
+            <strong>2.74 / 2.39 <small>%</small></strong>
+            <p>Normal / shear force</p>
+          </article>
+          <article>
+            <span>Image to depth</span>
+            <strong>1022 <small>Hz</small></strong>
+            <p>Paper-reported computation rate</p>
+          </article>
+          <article>
+            <span>Image to normal force</span>
+            <strong>918 <small>Hz</small></strong>
+            <p>Paper-reported computation rate</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="publications section-shell section-rule">
+      <div class="section-index" aria-hidden="true">03</div>
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Selected Publications</p>
+        <h2>Published work in tactile reconstruction and neural rendering.</h2>
+      </div>
+
+      <article class="publication" data-reveal>
+        <a class="publication-visual" href="https://jayvenlu.github.io/smf-psnn-website/" target="_blank" rel="noreferrer" aria-label="Open the SMF-PSNN project page">
+          <img src="assets/images/smf-psnn.webp" width="2400" height="1596" loading="lazy" alt="SMF-PSNN architecture for RGB-NIR tactile inverse rendering">
+          <span class="figure-tag">TMECH · 2025</span>
+        </a>
+        <div class="publication-copy">
+          <p class="eyebrow">Neural Inverse Rendering</p>
+          <h3>High-Precision RGB-NIR Vision-Tactile Sensor via Neural Inverse Rendering for Robotic Perception</h3>
+          <p class="authors">Yuankai Lin, <strong>Xiaofan Lu</strong>, and Hua Yang</p>
+          <p class="venue">IEEE/ASME Transactions on Mechatronics, 2025</p>
+          <p>
+            A joint calibration and inverse-rendering framework for RGB-NIR tactile sensing, enabling geometry reconstruction,
+            multi-light-field image synthesis, and transferable synthetic tactile data.
+          </p>
+          <div class="publication-links">
+            <a href="https://jayvenlu.github.io/smf-psnn-website/" target="_blank" rel="noreferrer">Project Page <span aria-hidden="true">↗</span></a>
+            <a href="https://doi.org/10.1109/TMECH.2025.3640680" target="_blank" rel="noreferrer">IEEE Paper <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="publication publication-reverse" data-reveal>
+        <a class="publication-visual" href="https://jayvenlu.github.io/gelsplitter3d-website/" target="_blank" rel="noreferrer" aria-label="Open the GelSplitter3D project page">
+          <img src="assets/images/gelsplitter3d.webp" width="1600" height="1011" loading="lazy" alt="GelSplitter3D tactile fingertips mounted on a three-finger robotic gripper">
+          <span class="figure-tag">IROS · 2025</span>
+        </a>
+        <div class="publication-copy">
+          <p class="eyebrow">Curved 3D Reconstruction</p>
+          <h3>GelSplitter3D: 3D Vision-Tactile Reconstruction from Infrared and Visible Images for Robotic Fine-Grained Tactile Perception</h3>
+          <p class="authors">Yuankai Lin, <strong>Xiaofan Lu</strong>, Jiahui Chen, and Hua Yang</p>
+          <p class="venue">2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</p>
+          <p>
+            A curved fingertip sensor that splits complementary visible and near-infrared optical fields and reconstructs
+            fine-grained contact geometry through neural photometric stereo and geometry-prior integration.
+          </p>
+          <div class="publication-links">
+            <a href="https://jayvenlu.github.io/gelsplitter3d-website/" target="_blank" rel="noreferrer">Project Page <span aria-hidden="true">↗</span></a>
+            <a href="https://doi.org/10.1109/IROS60139.2025.11246893" target="_blank" rel="noreferrer">IEEE Paper <span aria-hidden="true">↗</span></a>
+            <a href="https://arxiv.org/abs/2506.15087" target="_blank" rel="noreferrer">arXiv <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="background" class="background section-shell section-rule">
+      <div class="section-index" aria-hidden="true">04</div>
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Background</p>
+        <h2>Education and technical practice.</h2>
+      </div>
+
+      <div class="background-grid">
+        <div class="education" data-reveal>
+          <h3>Education</h3>
+          <article>
+            <time>2024–2027</time>
+            <div>
+              <h4>M.Eng. in Mechanical Engineering</h4>
+              <p>Huazhong University of Science and Technology</p>
+            </div>
+          </article>
+          <article>
+            <time>2020–2024</time>
+            <div>
+              <h4>B.Eng. in Robotics Engineering</h4>
+              <p>Huazhong University of Science and Technology</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="skills" data-reveal>
+          <h3>Skills</h3>
+          <dl>
+            <div><dt>Sensing</dt><dd>Optomechanical design, elastomer fabrication, RGB-NIR imaging, sensor calibration</dd></div>
+            <div><dt>Perception</dt><dd>Photometric stereo, 3D reconstruction, force estimation, inverse rendering</dd></div>
+            <div><dt>Hardware</dt><dd>FPGA acceleration, embedded deployment, camera interfaces, PCB prototyping</dd></div>
+            <div><dt>Programming</dt><dd>Python, C/C++, MATLAB, Verilog, PyTorch, OpenCV</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-shell section-rule">
+      <div class="section-index" aria-hidden="true">05</div>
+      <div class="contact-copy" data-reveal>
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s discuss tactile sensing and robotic perception.</h2>
+        <p>I welcome conversations about research collaboration, doctoral opportunities, and engineering roles.</p>
+      </div>
+      <div class="contact-details" data-reveal>
+        <div class="email-row">
+          <span class="contact-label">School email</span>
+          <code id="email-address">m202470725@hust.edu.cn</code>
+          <button id="copy-email" class="copy-button" type="button" aria-describedby="copy-status">Copy</button>
+          <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
+        </div>
+        <a href="https://github.com/JayvenLu" target="_blank" rel="noreferrer">
+          <span class="contact-label">GitHub</span>
+          <strong>github.com/JayvenLu</strong>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://jayvenlu.github.io/smf-psnn-website/" target="_blank" rel="noreferrer">
+          <span class="contact-label">Research</span>
+          <strong>SMF-PSNN project</strong>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://jayvenlu.github.io/gelsplitter3d-website/" target="_blank" rel="noreferrer">
+          <span class="contact-label">Research</span>
+          <strong>GelSplitter3D project</strong>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <p>© <span id="current-year">2026</span> Xiaofan Lu</p>
+    <p>Huazhong University of Science and Technology</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
