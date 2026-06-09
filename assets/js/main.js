@@ -11,20 +11,25 @@ function tabFromHash() {
   return knownTab(tabName) ? tabName : defaultTab;
 }
 
-function activateTab(tabName, { updateHistory = false, focus = false } = {}) {
+function activateTab(tabName, { updateHistory = false, focus = false, resetScroll = false } = {}) {
   const nextTab = knownTab(tabName) ? tabName : defaultTab;
+  let selectedTab = null;
 
   tabs.forEach((tab) => {
     const selected = tab.dataset.tab === nextTab;
     tab.setAttribute("aria-selected", String(selected));
     tab.tabIndex = selected ? 0 : -1;
+    if (selected) {
+      selectedTab = tab;
+    }
     if (selected && focus) {
       tab.focus();
     }
   });
 
   panels.forEach((panel) => {
-    panel.hidden = panel.id !== nextTab;
+    const panelName = panel.dataset.panel || panel.id;
+    panel.hidden = panelName !== nextTab;
   });
 
   if (updateHistory) {
@@ -35,6 +40,21 @@ function activateTab(tabName, { updateHistory = false, focus = false } = {}) {
   }
 
   document.title = `${nextTab[0].toUpperCase()}${nextTab.slice(1)} | Xiaofan Lu`;
+
+  if (selectedTab) {
+    const tabList = selectedTab.parentElement;
+    if (tabList) {
+      const targetLeft = selectedTab.offsetLeft - (tabList.clientWidth - selectedTab.offsetWidth) / 2;
+      tabList.scrollTo({ left: Math.max(0, targetLeft), behavior: "instant" });
+    }
+  }
+
+  if (resetScroll) {
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+  }
 }
 
 tabs.forEach((tab, index) => {
@@ -104,4 +124,4 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
-activateTab(tabFromHash());
+activateTab(tabFromHash(), { resetScroll: true });
