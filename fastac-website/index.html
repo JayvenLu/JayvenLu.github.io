@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FasTac is a curved RGB-NIR vision-tactile sensor for high-fidelity, high-speed 3D shape and 3-axis force perception.">
+  <meta name="theme-color" content="#f6f8f7">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FasTac: Curved Vision-Tactile Perception">
+  <meta property="og:description" content="A curved RGB-NIR vision-tactile sensor for 3D reconstruction, 3-axis force perception, and FPGA edge acceleration.">
+  <meta property="og:image" content="assets/images/og-cover.webp">
+  <title>FasTac | Curved Vision-Tactile Perception</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="FasTac home">
+        <span class="brand-mark">F</span>
+        <span>FasTac</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#system">System</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#demos">Demos</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="status-line">Under Review</p>
+          <h1>FasTac: A Curved Vision-Tactile Sensor for High-Fidelity, High-Speed 3D Shape and Three-Axis Force Perception</h1>
+          <p class="authors">
+            <a href="https://jayvenlu.github.io/" target="_blank" rel="noreferrer">Xiaofan Lu</a>,
+            <span>Kaiji Huang</span>,
+            <span>Yuankai Lin</span>,
+            <span>Jiahui Chen</span>,
+            <span>Hua Yang</span>,
+            and <span>Zhouping Yin</span>
+          </p>
+          <p class="affiliation">Huazhong University of Science and Technology</p>
+          <div class="hero-actions" aria-label="Page links">
+            <a class="button button-primary" href="#overview">Overview</a>
+            <a class="button button-secondary" href="#results">Results</a>
+            <a class="button button-secondary" href="#demos">Demos</a>
+            <a class="button button-secondary" href="#citation">Citation</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="assets/images/overview.webp" alt="FasTac sensors on a dexterous hand, RGB and NIR observations, surface normals, depth, and 3-axis force visualization." width="1600" height="900">
+        </figure>
+      </div>
+    </section>
+
+    <section id="overview" class="section section-first">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-index">01 / Overview</p>
+            <h2>Curved tactile geometry, force, and speed in one fingertip.</h2>
+          </div>
+          <p>FasTac combines RGB-NIR multispectral imaging, curved-surface 3D reconstruction, position-aware 3-axis force estimation, and an FPGA image-to-normal-force pipeline for dexterous-hand integration.</p>
+        </div>
+
+        <div class="metrics-grid" aria-label="Key results">
+          <article>
+            <strong>0.0415 <small>mm</small></strong>
+            <span>Depth MAE</span>
+          </article>
+          <article>
+            <strong>1022 <small>Hz</small></strong>
+            <span>Image-to-depth rate</span>
+          </article>
+          <article>
+            <strong>2.74% <small>/ 2.39%</small></strong>
+            <span>Normal / shear force NMAE</span>
+          </article>
+          <article>
+            <strong>918 <small>Hz</small></strong>
+            <span>FPGA image-to-Fz rate</span>
+          </article>
+        </div>
+
+        <div class="principles">
+          <article>
+            <span>Geometry</span>
+            <h3>RGB-NIR curved-surface reconstruction</h3>
+            <p>Single-chip synchronous visible and near-infrared imaging improves photometric conditioning on high-curvature contact surfaces.</p>
+          </article>
+          <article>
+            <span>Force</span>
+            <h3>Position-aware HyperForce model</h3>
+            <p>Dynamic convolution maps local 3D displacement fields to normal and tangential force under spatially nonuniform elastomer mechanics.</p>
+          </article>
+          <article>
+            <span>Edge</span>
+            <h3>Deterministic tactile decoding</h3>
+            <p>An FPGA pipeline integrates normal inference, depth reconstruction, displacement quantization, and Fz estimation at low latency.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="system" class="section section-muted">
+      <div class="container media-layout">
+        <div class="media-copy">
+          <p class="section-index">02 / Sensor System</p>
+          <h2>A compact RGB-NIR curved fingertip for dexterous manipulation.</h2>
+          <p>The sensor uses a light-guiding fingertip skeleton, a multispectral LED FPC, a compliant gel skin, and a custom miniature camera module built around an OV2736 RGB-IR CMOS sensor.</p>
+          <p>Visible and near-infrared signals are captured from the same optical center, avoiding cross-camera registration while reducing sensor volume for fingertip integration.</p>
+        </div>
+        <figure class="paper-figure">
+          <img src="assets/images/sensor-structure.webp" alt="Mechanical design and integration of the FasTac curved sensor." width="810" height="412" loading="lazy">
+          <figcaption>Mechanical structure and compact RGB-NIR imaging module.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="method" class="section">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-index">03 / Method</p>
+            <h2>From raw RGB-NIR images to shape, displacement, and force.</h2>
+          </div>
+          <p>FasTac decodes contact through four-source photometric stereo, boundary-prior fast Poisson depth recovery, marker-based tangential displacement extraction, and HyperForce 3-axis force estimation.</p>
+        </div>
+
+        <figure class="paper-figure figure-wide">
+          <img src="assets/images/perception-pipeline.webp" alt="FasTac pipeline for normal estimation, depth reconstruction, marker displacement extraction, and position-aware 3-axis force estimation." width="1835" height="965" loading="lazy">
+          <figcaption>Perception pipeline for 3D reconstruction and 3-axis force estimation.</figcaption>
+        </figure>
+
+        <div class="method-steps" aria-label="Method stages">
+          <div><span>01</span><strong>RGB-NIR acquisition</strong></div>
+          <div><span>02</span><strong>Normal inference</strong></div>
+          <div><span>03</span><strong>Depth reconstruction</strong></div>
+          <div><span>04</span><strong>HyperForce</strong></div>
+        </div>
+
+        <div class="fpga-strip">
+          <div class="fpga-copy">
+            <p class="section-index">Edge Deployment</p>
+            <h3>FPGA image-to-normal-force pipeline</h3>
+            <p>The edge implementation maps the tactile decoding chain onto a PS-PL heterogeneous architecture. The PS side handles image synchronization, DDR frame buffering, DMA transfer, AXI-Lite control, and result readout, while the PL side performs normal inference, boundary-prior depth reconstruction, displacement quantization, and Fz accumulation.</p>
+            <p>The input image is cropped and downsampled to 128 x 128 for the FPGA path, balancing on-chip storage, throughput, and force-estimation accuracy. The current implementation operates at 150 MHz and reaches 1.09 ms latency for the complete image-to-normal-force pipeline.</p>
+            <div class="pipeline-flow" aria-label="FPGA processing pipeline">
+              <span>RGB/NIR</span><i aria-hidden="true">-&gt;</i>
+              <span>Normal</span><i aria-hidden="true">-&gt;</i>
+              <span>Depth</span><i aria-hidden="true">-&gt;</i>
+              <span>dz</span><i aria-hidden="true">-&gt;</i>
+              <span>Fz</span>
+            </div>
+          </div>
+          <figure class="fpga-figure">
+            <img src="assets/images/fpga-architecture.webp" alt="FPGA architecture for the FasTac image-to-normal-force perception pipeline." width="1600" height="748" loading="lazy">
+            <figcaption>FPGA architecture for image synchronization, buffering, acceleration, and normal-force output.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section section-dark">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-index">04 / Results</p>
+            <h2>Fine 3D reconstruction, accurate 3-axis force, high-speed tactile output.</h2>
+          </div>
+          <p>Experiments evaluate geometry accuracy, object-level reconstruction, 3-axis force prediction, force feedback grasping, and vibration measurement under CPU, GPU, and FPGA implementations.</p>
+        </div>
+
+        <div class="result-grid">
+          <article class="result-card result-wide">
+            <figure>
+              <img src="assets/images/reconstruction-results-tight.webp" alt="RGB, NIR, normal, and point-cloud reconstruction results for five representative objects." width="1604" height="1297" loading="lazy">
+            </figure>
+            <div>
+              <p class="card-label">3D reconstruction</p>
+              <h3>RGB-NIR sensing preserves pits, slots, ridges, fingerprints, and miniature component layouts.</h3>
+            </div>
+          </article>
+          <article class="result-card">
+            <figure>
+              <img src="assets/images/force-regression-tight.webp" alt="Regression plots comparing predicted 3-axis forces with ATI force-sensor ground truth." width="888" height="300" loading="lazy">
+            </figure>
+            <div>
+              <p class="card-label">Force estimation</p>
+              <h3>Predicted Fx, Fy, and Fz align with force-sensor ground truth.</h3>
+              <p>Component NMAE values reach 2.37%, 2.41%, and 2.74%.</p>
+            </div>
+          </article>
+          <article class="result-card">
+            <figure>
+              <img src="assets/images/vibration-response-tight.webp" alt="CPU, GPU, and FPGA frequency spectra and time-domain responses under 50, 70, and 100 hertz vibration." width="1672" height="804" loading="lazy">
+            </figure>
+            <div>
+              <p class="card-label">High-frequency decoding</p>
+              <h3>The FPGA path supports continuous dynamic tactile measurement.</h3>
+              <p>The image-to-Fz pipeline reaches 1.09 ms latency and approximately 918 Hz output.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="performance-panel">
+          <div>
+            <p class="section-index">Latency</p>
+            <h3>Image-to-Fz platform comparison</h3>
+          </div>
+          <div class="performance-bars" aria-label="Image-to-Fz latency by platform">
+            <div class="bar-row"><span>CPU</span><div><i style="--bar:100%"></i></div><strong>6.82 ms</strong></div>
+            <div class="bar-row"><span>GPU</span><div><i style="--bar:48%"></i></div><strong>3.26 ms</strong></div>
+            <div class="bar-row"><span>FPGA</span><div><i style="--bar:16%"></i></div><strong>1.09 ms</strong></div>
+          </div>
+          <p class="evidence-note">FPGA energy values are Vivado estimates combined with scheduled RTL/HLS latency, not board-measured end-to-end energy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="demos" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-index">05 / Demos</p>
+          <h2>Contact-rich demonstrations across geometry, grasping, and vibration.</h2>
+        </div>
+
+        <div class="demo-grid">
+          <article class="demo-card">
+            <video controls preload="none" poster="assets/images/poster-reconstruction.webp">
+              <source src="assets/videos/3d-reconstruction.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+            <div>
+              <p class="card-label">3D reconstruction</p>
+              <h3>Multi-object curved-surface perception</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <video controls preload="none" poster="assets/images/poster-feedback.webp">
+              <source src="assets/videos/feedback-grasping.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+            <div>
+              <p class="card-label">Feedback grasping</p>
+              <h3>Friction-aware closed-loop response</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <video controls preload="none" poster="assets/images/poster-vibration.webp">
+              <source src="assets/videos/vibration-measurement.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+            <div>
+              <p class="card-label">Vibration</p>
+              <h3>High-frequency normal-force sensing</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="citation" class="section section-muted">
+      <div class="container citation-layout">
+        <div>
+          <p class="section-index">06 / Citation</p>
+          <h2>Provisional citation for an unpublished manuscript.</h2>
+          <p>FasTac is currently under review. The publication record and stable citation metadata will be updated after acceptance.</p>
+        </div>
+        <div class="citation-box">
+          <button id="copy-citation" type="button">Copy BibTeX</button>
+          <pre id="bibtex"><code>@misc{lu2026fastac,
+  title={FasTac: A Curved Vision-Tactile Sensor for High-Fidelity, High-Speed 3D Shape and Three-Axis Force Perception},
+  author={Lu, Xiaofan and Huang, Kaiji and Lin, Yuankai and Chen, Jiahui and Yang, Hua and Yin, Zhouping},
+  year={2026},
+  note={Manuscript under review}
+}</code></pre>
+          <p id="copy-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>FasTac / Huazhong University of Science and Technology</p>
+      <p>Project page for an unpublished research manuscript.</p>
+    </div>
+  </footer>
+</body>
+</html>
