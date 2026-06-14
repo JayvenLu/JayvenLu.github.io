@@ -526,6 +526,10 @@ h3 {
   font-size: 0.95rem;
 }
 
+.project-body .item-links {
+  margin-top: 0.65rem;
+}
+
 .build-hub {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
