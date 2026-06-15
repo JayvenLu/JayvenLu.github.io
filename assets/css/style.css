@@ -530,6 +530,24 @@ h3 {
   margin-top: 0.65rem;
 }
 
+.project-impact {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--page);
+  border-left: 3px solid var(--link);
+  border-radius: 0 0.35rem 0.35rem 0;
+}
+
+.project-impact p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.project-impact strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
 .build-hub {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -761,6 +779,10 @@ h3 {
   .content-panel,
   .tab-panels,
   .panel-header,
+  .project-list,
+  .project-item,
+  .project-body,
+  .project-impact,
   .build-hub,
   .build-card,
   .build-card-body {

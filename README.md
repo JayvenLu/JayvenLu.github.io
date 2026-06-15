@@ -39,4 +39,4 @@ Publication images remain subject to their respective paper and publisher rights
 
 ## Public Boundaries
 
-This website includes published papers, publicly disclosed manuscripts, and high-level public project summaries. It intentionally excludes private source code, datasets, author manuscripts, company identities from confidential collaborations, private contact details, and academic records.
+This website includes published papers, publicly disclosed manuscripts, high-level public project summaries, and publicly announced industry collaborations or technology-transfer outcomes confirmed for personal disclosure. It intentionally excludes private source code, datasets, author manuscripts, company identities from confidential collaborations, private contact details, and academic records.
