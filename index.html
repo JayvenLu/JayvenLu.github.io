@@ -130,6 +130,7 @@
           <section class="content-section">
             <h2>News</h2>
             <ul class="news-list">
+              <li><time datetime="2026-07">Jul 2026</time><span>Released the <a href="https://jayvenlu.github.io/fastac-website/" target="_blank" rel="noreferrer">FasTac project page</a> and <a href="https://arxiv.org/abs/2607.28416" target="_blank" rel="noreferrer">arXiv preprint</a>.</span></li>
               <li><time datetime="2026-06">Jun 2026</time><span>Launched this academic website.</span></li>
               <li><time datetime="2025">2025</time><span>Published the SMF-PSNN project page and paper in IEEE/ASME Transactions on Mechatronics.</span></li>
               <li><time datetime="2025">2025</time><span>Published the GelSplitter3D project page and paper at IEEE/RSJ IROS.</span></li>
@@ -145,11 +146,18 @@
 
           <div class="publication-list">
             <article class="publication-item">
+              <a class="publication-image" href="https://jayvenlu.github.io/fastac-website/" target="_blank" rel="noreferrer" aria-label="Open the FasTac project page">
+                <img src="assets/images/fastac.webp" width="1600" height="1207" alt="FasTac sensors, RGB-NIR tactile observations, depth reconstruction, and three-axis force visualization">
+              </a>
               <div class="publication-body">
-                <h3>GelSpec3D: A Curved Multispectral Vision-Tactile Sensor for High-Precision, High-Speed 3D Shape and Three-Axis Force Perception</h3>
-                <p class="publication-summary">A curved RGB-NIR vision-tactile fingertip for high-precision 3D reconstruction, position-aware three-axis force estimation, and high-speed FPGA edge perception.</p>
-                <p class="publication-authors"><strong>Xiaofan Lu</strong>, Kaiji Huang, Yuankai Lin, Jiahui Chen, Hua Yang, and Zhouping Yin</p>
-                <p class="publication-venue">Manuscript under review, 2026</p>
+                <h3>FasTac: A Curved Multispectral Vision-Based Tactile Sensor for High-Speed High-Precision 3D Shape and Force Perception</h3>
+                <p class="publication-summary">A compact RGB-NIR tactile fingertip combining boundary-prior 3D reconstruction, position-aware three-axis force estimation, and a low-latency FPGA perception pipeline.</p>
+                <p class="publication-authors"><strong>Xiaofan Lu</strong>, Kaiji Huang, Jiahui Chen, Yuankai Lin, Hua Yang, and Zhouping Yin</p>
+                <p class="publication-venue">arXiv:2607.28416; submitted to IEEE/ASME Transactions on Mechatronics, 2026</p>
+                <div class="item-links">
+                  <a href="https://jayvenlu.github.io/fastac-website/" target="_blank" rel="noreferrer">Project page</a>
+                  <a href="https://arxiv.org/abs/2607.28416" target="_blank" rel="noreferrer">arXiv</a>
+                </div>
               </div>
             </article>
 
@@ -201,13 +209,17 @@
                 <span>Research</span>
               </div>
               <div class="project-body">
-                <h3>GelSpec3D: Curved Vision-Tactile Perception</h3>
+                <h3>FasTac: Curved Multispectral Vision-Based Tactile Perception</h3>
                 <p>
-                  Leading the development of a curved RGB-NIR tactile sensing system spanning sensor design,
-                  automated calibration, boundary-aware 3D reconstruction, marker displacement recovery, and
-                  position-aware three-axis force estimation.
+                  Led the development of a compact curved RGB-NIR tactile sensing system spanning sensor design,
+                  synchronized multispectral imaging, boundary-prior 3D reconstruction, HyperForce three-axis
+                  force estimation, and FPGA edge deployment.
                 </p>
-                <p class="project-result">Reported results include 0.0415 mm depth MAE and 2.74% normal-force NMAE.</p>
+                <p class="project-result">Achieves 0.0415 mm depth MAE, 2.74% / 2.39% normal / shear force NMAE, and 1.09 ms FPGA image-to-Fz latency.</p>
+                <div class="item-links">
+                  <a href="https://jayvenlu.github.io/fastac-website/" target="_blank" rel="noreferrer">Project page</a>
+                  <a href="https://arxiv.org/abs/2607.28416" target="_blank" rel="noreferrer">arXiv</a>
+                </div>
               </div>
             </article>
 

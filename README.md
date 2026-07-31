@@ -30,6 +30,7 @@ The active section is encoded in the URL hash, for example `#publications`.
 ## Asset Sources
 
 - Portrait: personal application-material archive
+- FasTac image: public FasTac project-page asset
 - SMF-PSNN image: public SMF-PSNN project-page assets
 - GelSplitter3D image: public GelSplitter3D project-page assets
 - IBM Plex: distributed under the SIL Open Font License
