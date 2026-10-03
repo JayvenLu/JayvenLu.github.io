@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Xiaofan Lu is a robotics researcher working on vision-based tactile sensing, robotic perception, and edge AI.">
+  <meta name="description" content="Xiaofan Lu works on vision-based tactile sensing, visuotactile robot learning, and dexterous manipulation.">
   <meta name="theme-color" content="#f3f5f7">
   <link rel="canonical" href="https://jayvenlu.github.io/">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Xiaofan Lu | Robotics Researcher">
-  <meta property="og:description" content="Vision-based tactile sensing, robotic perception, and edge AI.">
+  <meta property="og:description" content="Vision-based tactile sensing, visuotactile robot learning, and dexterous manipulation.">
   <meta property="og:url" content="https://jayvenlu.github.io/">
   <meta property="og:image" content="https://jayvenlu.github.io/assets/images/og-cover.webp">
   <meta name="twitter:card" content="summary_large_image">
@@ -30,7 +30,7 @@
           <p class="profile-affiliation">Huazhong University of Science and Technology</p>
         </div>
 
-        <p class="profile-focus">Vision-based tactile sensing<br>Robotic perception<br>Edge AI</p>
+        <p class="profile-focus">Vision-based tactile sensing<br>Visuotactile robot learning<br>Dexterous manipulation</p>
 
         <div class="profile-links">
           <div class="email-control">
@@ -63,13 +63,14 @@
             <div class="prose">
               <p>
                 I am an M.Eng. student in Mechanical Engineering at Huazhong University of Science and Technology,
-                advised by Prof. Hua Yang. My research focuses on vision-based tactile sensing for contact-rich
-                robotic manipulation.
+                advised by Prof. Hua Yang, with expected graduation in June 2027. My research focuses on
+                vision-based tactile sensing and visuotactile learning for dexterous, contact-rich robotic manipulation.
               </p>
               <p>
-                I work across sensor structure and fabrication, imaging hardware, geometric and force calibration,
-                3D reconstruction, force estimation, neural inverse rendering, and FPGA acceleration. I am interested
-                in systems where sensing mechanics, perception algorithms, and real-time deployment are designed together.
+                My work spans tactile sensor design, 3D geometry reconstruction, three-axis force estimation,
+                and real-time FPGA deployment. I also work on visuotactile fusion, imitation learning, and
+                simulation-to-real transfer for multi-scale fine manipulation, connecting contact perception
+                with robot action learning.
               </p>
             </div>
           </section>
@@ -82,6 +83,8 @@
                 <div>
                   <h3>M.Eng. in Mechanical Engineering</h3>
                   <p>Huazhong University of Science and Technology, Wuhan, China</p>
+                  <p>Expected graduation: June 2027</p>
+                  <p>Thesis: High-speed, high-precision vision-based tactile sensing for robotic dexterous hands.</p>
                 </div>
               </article>
               <article class="timeline-item">
@@ -97,11 +100,11 @@
           <section class="content-section">
             <h2>Research Interests</h2>
             <ul class="interest-list">
-              <li>Vision-based tactile sensing</li>
-              <li>Contact geometry and force perception</li>
-              <li>Neural inverse rendering and synthetic tactile data</li>
-              <li>Multimodal perception for robotic manipulation</li>
-              <li>Edge AI and FPGA acceleration</li>
+              <li>Tactile geometry and force perception</li>
+              <li>Visuotactile multimodal fusion</li>
+              <li>Imitation learning for fine manipulation</li>
+              <li>Simulation-to-real transfer</li>
+              <li>Real-time edge perception</li>
             </ul>
           </section>
 
@@ -110,7 +113,11 @@
             <dl class="skills-list">
               <div>
                 <dt>Sensing</dt>
-                <dd>Optical and mechanical sensor design, elastomer fabrication, Multi-spectral imaging, geometric and force calibration</dd>
+                <dd>Optical and mechanical sensor design, elastomer fabrication, multispectral imaging, geometric and force calibration</dd>
+              </div>
+              <div>
+                <dt>Robot Learning</dt>
+                <dd>Visuotactile fusion, imitation learning, simulation-to-real transfer, long-horizon fine manipulation</dd>
               </div>
               <div>
                 <dt>Perception</dt>
@@ -118,7 +125,7 @@
               </div>
               <div>
                 <dt>Hardware</dt>
-                <dd>FPGA acceleration, embedded deployment, camera interfaces, PCB prototyping</dd>
+                <dd>FPGA acceleration, embedded deployment, camera interfaces, PCB prototyping, Vivado, Vitis HLS, Vitis, Zynq MPSoC, model quantization</dd>
               </div>
               <div>
                 <dt>Programming</dt>
@@ -199,26 +206,87 @@
         <section id="projects" class="tab-panel" role="tabpanel" aria-labelledby="tab-projects" hidden>
           <header class="panel-header">
             <h2>Projects</h2>
-            <p>Selected research and engineering work across sensing, perception, and deployment.</p>
+            <p>Selected research and engineering work across tactile sensing, robot learning, and deployment.</p>
           </header>
 
           <div class="project-list">
             <article class="project-item">
               <div class="project-meta">
-                <time>2025 - Present</time>
+                <time>2024.03 - Present</time>
                 <span>Research</span>
               </div>
               <div class="project-body">
-                <h3>FasTac: Curved Multispectral Vision-Based Tactile Perception</h3>
+                <h3>FasTac: High-Speed Tactile Geometry and Force Perception</h3>
                 <p>
                   Led the development of a compact curved RGB-NIR tactile sensing system spanning sensor design,
                   synchronized multispectral imaging, boundary-prior 3D reconstruction, HyperForce three-axis
                   force estimation, and FPGA edge deployment.
                 </p>
-                <p class="project-result">Achieves 0.0415 mm depth MAE, 2.74% / 2.39% normal / shear force NMAE, and 1.09 ms FPGA image-to-Fz latency.</p>
+                <p>
+                  Implemented hardware-oriented pipelines for surface-normal inference, boundary-prior depth
+                  reconstruction, and normal-force estimation on Xilinx Zynq UltraScale+ platforms.
+                </p>
+                <p class="project-result">
+                  Depth mean absolute error is 0.0415 mm. The FPGA image-to-normal-force pipeline achieves
+                  1.09 ms/frame latency and 8.41 mJ/frame energy consumption. Computation rates reach
+                  1022 Hz for image-to-depth and 918 Hz for image-to-normal-force.
+                </p>
                 <div class="item-links">
                   <a href="https://jayvenlu.github.io/fastac-website/" target="_blank" rel="noreferrer">Project page</a>
                   <a href="https://arxiv.org/abs/2607.28416" target="_blank" rel="noreferrer">arXiv</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-item">
+              <div class="project-meta">
+                <time>2025.03 - 2025.12</time>
+                <span>Research</span>
+              </div>
+              <div class="project-body">
+                <h3>Visuotactile Imitation Learning for Multi-Scale Fine Manipulation</h3>
+                <p>
+                  Worked on visuotactile imitation learning for multi-scale, contact-rich bimanual manipulation. The project combines tactile-informed simulation data generation, memory-efficient multimodal sparse attention, and multi-expert action learning to address limited demonstrations, small-target perception, and coarse-to-fine action coordination.
+                </p>
+                <p class="project-result">
+                  Reduces memory usage for multi-scale fusion from 24 GB to 7.4 GB. The complete method achieves
+                  a 100% success rate in the evaluated 800-step simulated long-horizon embroidery task.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-item">
+              <div class="project-meta">
+                <time>2025.05 - 2026.05</time>
+                <span>Integration</span>
+              </div>
+              <div class="project-body">
+                <h3>Visuotactile Sensor Development and Dexterous-Hand Integration</h3>
+                <p>
+                  Assisted with mechanical design for two-finger grippers, three-finger grippers, and five-finger
+                  dexterous hands. Responsible for end-effector vision-based tactile sensor design, 3D reconstruction
+                  and force estimation algorithms, calibration, testing, and system integration.
+                </p>
+                <p class="project-result">
+                  Delivered vision-based tactile sensor prototypes and accompanying technical documentation for
+                  two-finger, three-finger, and five-finger platforms.
+                </p>
+                <div class="item-links">
+                  <a href="https://jayvenlu.github.io/two-finger-gripper/" target="_blank" rel="noreferrer">Two-finger gripper</a>
+                  <a href="https://jayvenlu.github.io/three-finger-gripper/" target="_blank" rel="noreferrer">Three-finger gripper</a>
+                  <a href="https://jayvenlu.github.io/five-finger-hand/" target="_blank" rel="noreferrer">Five-finger hand</a>
+                </div>
+                <div class="project-impact">
+                  <p>
+                    <strong>Industry Impact.</strong> My work on vision-based tactile sensor adaptation, calibration, and
+                    perception algorithms supported Zhejiang Shiyue Technology (LumiBot) in developing the Lumi-Tac
+                    vision-based tactile sensor and Lumi-Dex dexterous-hand product line.
+                  </p>
+                  <div class="item-links">
+                    <a href="http://lumirobot.net/" target="_blank" rel="noreferrer">Company website</a>
+                    <a href="https://mp.weixin.qq.com/s/aN7jpB5ka_K8SEgIMlM8Rg" target="_blank" rel="noreferrer">Lumi-Tac</a>
+                    <a href="https://mp.weixin.qq.com/s/rqfRgZj3CRCiauIa1_Gb-Q" target="_blank" rel="noreferrer">Lumi-Dex</a>
+                  </div>
                 </div>
               </div>
             </article>
@@ -243,48 +311,6 @@
                 </div>
               </div>
             </article>
-
-            <article class="project-item">
-              <div class="project-meta">
-                <time>2025 - Present</time>
-                <span>Hardware</span>
-              </div>
-              <div class="project-body">
-                <h3>FPGA Edge Deployment</h3>
-                <p>
-                  Developing hardware-oriented pipelines for surface-normal inference, boundary-prior depth
-                  reconstruction, and normal-force estimation on Xilinx Zynq UltraScale+ platforms.
-                </p>
-                <p class="project-result">Computation rates reach 1022 Hz for image-to-depth and 918 Hz for image-to-normal-force.</p>
-              </div>
-            </article>
-
-            <article class="project-item">
-              <div class="project-meta">
-                <time>2025 - 2026</time>
-                <span>Integration</span>
-              </div>
-              <div class="project-body">
-                <h3>Multimodal Dexterous-Hand Integration</h3>
-                <p>
-                  Contributed vision-tactile sensor adaptation, fabrication, integration, and perception algorithms
-                  for two-finger, three-finger, and five-finger robotic end effectors.
-                </p>
-                <p class="project-result">Focused on repeatable calibration, contact geometry reconstruction, and system-level validation.</p>
-                <div class="project-impact">
-                  <p>
-                    <strong>Industry Impact.</strong> My work on vision-tactile sensor adaptation, calibration, and
-                    perception algorithms supported Zhejiang Shiyue Technology (LumiBot) in developing the Lumi-Tac
-                    vision-tactile sensor and Lumi-Dex dexterous-hand product line.
-                  </p>
-                  <div class="item-links">
-                    <a href="http://lumirobot.net/" target="_blank" rel="noreferrer">Company website</a>
-                    <a href="https://mp.weixin.qq.com/s/aN7jpB5ka_K8SEgIMlM8Rg" target="_blank" rel="noreferrer">Lumi-Tac</a>
-                    <a href="https://mp.weixin.qq.com/s/rqfRgZj3CRCiauIa1_Gb-Q" target="_blank" rel="noreferrer">Lumi-Dex</a>
-                  </div>
-                </div>
-              </div>
-            </article>
           </div>
         </section>
 
@@ -299,13 +325,13 @@
               <img src="assets/build/two-finger-gripper.jpg" width="1400" height="1438" alt="Two-finger gripper with integrated tactile fingertips">
               <span class="build-card-body">
                 <h3>Two-Finger Gripper</h3>
-                <span>Vision-tactile end-effector for fine manipulation and contact reconstruction.</span>
+                <span>Vision-based tactile end-effector for fine manipulation and contact reconstruction.</span>
                 <span class="build-card-link">Project page &nearr;</span>
               </span>
             </a>
 
             <a class="build-card" href="https://jayvenlu.github.io/three-finger-gripper/" target="_blank" rel="noreferrer">
-              <img src="assets/build/three-finger-gripper.jpg" width="1024" height="1536" alt="Three-finger gripper with vision-tactile sensors">
+              <img src="assets/build/three-finger-gripper.jpg" width="1024" height="1536" alt="Three-finger gripper with vision-based tactile sensors">
               <span class="build-card-body">
                 <h3>Three-Finger Gripper</h3>
                 <span>Multifinger tactile platform for object interaction and manipulation demos.</span>

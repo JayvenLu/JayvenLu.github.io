@@ -551,7 +551,10 @@ h3 {
 .build-hub {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  width: 100%;
+  max-width: 1040px;
+  margin-inline: auto;
+  gap: 20px;
 }
 
 .build-card {
@@ -570,27 +573,30 @@ h3 {
 
 .build-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  background: var(--page);
+  height: 260px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  padding: 12px;
+  background: #ffffff;
 }
 
 .build-card-body {
   display: grid;
-  gap: 0.55rem;
+  gap: 8px;
   min-width: 0;
-  padding: 1rem;
+  padding: 14px 16px;
 }
 
 .build-card h3 {
   margin-bottom: 0;
-  font-size: 1.22rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
 .build-card-body > span {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.55;
 }
 
@@ -864,6 +870,10 @@ h3 {
 
   .build-hub {
     grid-template-columns: 1fr;
+  }
+
+  .build-card img {
+    height: 230px;
   }
 
   .site-footer {
